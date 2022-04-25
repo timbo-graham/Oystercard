@@ -47,4 +47,11 @@ describe Oystercard do
 
   end
 
+  describe 'journey status' do
+    
+    it { is_expected.to respond_to(:touch_in) }
+
+  end
+
+
 end
