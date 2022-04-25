@@ -1,3 +1,5 @@
+require 'oystercard'
+
 describe Oystercard do
   it 'can show a balance' do
 
@@ -11,6 +13,17 @@ describe Oystercard do
 
   end
 
+  it "can top up the card balance" do
+    
+    # User story 2
+    # In order to keep using public transport
+    # As a customer
+    # I want to add money to my card
 
+    subject.top_up(10)
+
+    expect(subject.balance).to eq 10
+
+  end
 
 end
