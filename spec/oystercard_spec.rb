@@ -1,6 +1,7 @@
 require 'oystercard'
 
 describe Oystercard do
+
   it 'can show a balance' do
 
     expect(subject.balance).to eq 0
@@ -13,17 +14,19 @@ describe Oystercard do
 
   end
 
-  it "can top up the card balance" do
-    
+  describe '#top_up' do
+   
     # User story 2
     # In order to keep using public transport
     # As a customer
     # I want to add money to my card
 
-    subject.top_up(10)
+    it { is_expected.to respond_to(:top_up).with(1).argument }
 
-    expect(subject.balance).to eq 10
-
+    it 'can top up the balance' do
+      expect { subject.top_up 1 }.to change { subject.balance }.by 1
+    end
+    
   end
 
 end
