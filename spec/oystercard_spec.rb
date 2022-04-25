@@ -73,6 +73,12 @@ describe Oystercard do
 
     end
 
+    it 'Can check if card is NOT in journey' do
+      
+      expect(subject.in_journey?).to eq false
+
+    end
+
   end
 
 

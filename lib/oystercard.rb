@@ -32,7 +32,9 @@ class Oystercard
 
   def in_journey?
 
-
+    if @card_in_use == true
+      true
+    end
 
   end
 
