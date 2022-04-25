@@ -51,6 +51,20 @@ describe Oystercard do
     
     it { is_expected.to respond_to(:touch_in) }
 
+    it "Can touch in" do
+      
+      expect { subject.touch_in }.to change { subject.card_in_use }.to eq true
+
+      # expect(subject.card_in_use).to be_in_journey
+
+    end
+
+    it "Can touch out" do
+      
+      expect { subject.touch_out }.to change { subject.card_in_use }.to eq false
+
+    end
+
   end
 
 
