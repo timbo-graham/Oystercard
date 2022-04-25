@@ -41,7 +41,7 @@ describe Oystercard do
       
       subject.top_up(50)
 
-      expect { subject.deduct 1 }.to change { subject.balance }.by 1
+      expect { subject.deduct 1 }.to change { subject.balance }.by -1
 
     end
 
