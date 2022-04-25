@@ -66,6 +66,13 @@ describe Oystercard do
 
     end
 
+    it 'Can check if card is in journey' do
+
+      subject.touch_in
+      expect( subject.in_journey? ).to eq true
+
+    end
+
   end
 
 
