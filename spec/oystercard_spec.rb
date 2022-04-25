@@ -61,6 +61,7 @@ describe Oystercard do
 
     it "Can touch out" do
       
+      subject.touch_in
       expect { subject.touch_out }.to change { subject.card_in_use }.to eq false
 
     end
