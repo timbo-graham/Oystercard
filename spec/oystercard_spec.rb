@@ -73,6 +73,12 @@ describe Oystercard do
 
     end
 
+    it "Deducts fare on touch out" do
+      
+      expect { subject.touch_out }.to change { subject.balance }.by(Oystercard::MIN_BALANCE)
+
+    end
+
     it 'Can check if card is in journey' do
 
       subject.touch_in
