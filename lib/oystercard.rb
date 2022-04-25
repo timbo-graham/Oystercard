@@ -19,16 +19,12 @@ class Oystercard
 
   end
 
-  def deduct(value)
-
-    @balance -= value
-
-  end
 
   def touch_in
 
     raise "Touch in failure: Minimum balance £1" if @balance < MIN_BALANCE
     @card_in_use = true
+
 
   end
 
@@ -44,10 +40,17 @@ class Oystercard
   end
 
   def touch_out
-
+    deduct(MIN_BALANCE)
     @card_in_use = false
 
   end
 
+  private
+
+  def deduct(value)
+
+    @balance -= value
+
+  end
 
 end
