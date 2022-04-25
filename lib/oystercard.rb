@@ -34,6 +34,9 @@ class Oystercard
 
     if @card_in_use == true
       true
+    else
+      false
+
     end
 
   end
@@ -41,7 +44,7 @@ class Oystercard
   def touch_out
 
     @card_in_use = false
-    
+
   end
 
 

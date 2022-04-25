@@ -79,6 +79,12 @@ describe Oystercard do
 
     end
 
+    it 'refuses touch in when balance below minimum' do
+
+      expect { subject.touch_in }.to raise_error "Touch in failure: Minimum balance £1"
+
+    end
+
   end
 
 
