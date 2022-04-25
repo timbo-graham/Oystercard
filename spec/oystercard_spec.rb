@@ -47,9 +47,16 @@ describe Oystercard do
 
   end
 
+  it 'refuses touch in when balance below minimum' do
+
+    subject.top_up(Oystercard::MIN_BALANCE - 1)
+    expect { subject.touch_in }.to raise_error "Touch in failure: Minimum balance £#{Oystercard::MIN_BALANCE}"
+
+  end
+
   describe 'journey status' do
     
-    it { is_expected.to respond_to(:touch_in) }
+    before(:each) { subject.top_up(90) }
 
     it "Can touch in" do
       
@@ -76,12 +83,6 @@ describe Oystercard do
     it 'Can check if card is NOT in journey' do
       
       expect(subject.in_journey?).to eq false
-
-    end
-
-    it 'refuses touch in when balance below minimum' do
-
-      expect { subject.touch_in }.to raise_error "Touch in failure: Minimum balance £1"
 
     end
 
